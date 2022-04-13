@@ -9,7 +9,8 @@ import typing
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-from calendar import month_name 
+# from calendar import month_name 
+
 root=Tk()
 c = ttk.Frame(root, padding=(5, 5, 12, 0))
 c.grid(column=0, row=0, sticky=(N,W,E,S))
@@ -80,17 +81,14 @@ def mycombobox():
 
 
 def lbox():
-	root.title('Listbox:')
-	choices = ['jan', 'feb','mar']
-	'''
-	choices = ''
-	for m in month_name:
-		choices = choices + m + ','
-	choices = choices[:-1]
-	'''
-	choicesvar = StringVar(value=choices)
-	lb = Listbox(root, height = 5, listvariable = choicesvar)
-	lb.grid(column = 2, row = 1, rowspan = 4)
+    root.title('Listbox:')
+    choices= []
+    choices = [x for x in month_name]
+
+
+    choicesvar = StringVar(value=choices)
+    lb = Listbox(root, height = 5, listvariable = choicesvar)
+    lb.grid(column = 2, row = 1, rowspan = 4)
 
 
 def QuitButton():
